@@ -1,0 +1,44 @@
+h2{
+    margin: 20px 0;
+}
+
+.developer{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px;
+}
+
+.caption{
+    padding-bottom: 10px;
+}
+
+p{
+    padding: 0 20px 20px;
+}
+
+.feedback{
+    margin: 0 20px;
+}
+
+.feedback{
+    margin-bottom: 20px;
+}
+
+button{
+    margin-right: 10px;
+}
+
+footer{
+    padding: 20px;
+    text-decoration: underline 0.5px solid rgb(36, 87, 129);
+}

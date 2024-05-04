@@ -1,0 +1,40 @@
+h2{
+    margin: 20px 0;
+}
+
+p{
+    padding: 0 20px;
+}
+
+li{
+    list-style-type: square;
+}
+
+img{
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px;
+}
+
+.biblestudy-register{
+    margin: 0 20px;
+}
+
+.biblestudy-register{
+    margin-bottom: 20px;
+}
+
+.group-days>input{
+    margin-right: 5px;
+}
+
+.group-days>label{
+    margin-right: 20px;
+}
+
+button{
+    margin-right: 10px;
+}

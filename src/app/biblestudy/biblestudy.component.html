@@ -1,0 +1,64 @@
+<h2 class="text-center text-light">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M9 4C7.355 4 6 5.355 6 7v18c0 1.645 1.355 3 3 3h17V4zm0 2h15v16H9a2.95 2.95 0 0 0-1 .188V7c0-.566.434-1 1-1m6 2v3h-3v2h3v7h2v-7h3v-2h-3V8zM9 24h15v2H9c-.566 0-1-.434-1-1c0-.566.434-1 1-1"/>
+    </svg>
+    Bible Study of COG
+</h2>
+<section class="biblestudy-schedule text-light">
+    <img src="../../assets/biblestudy.jpeg" alt="Bible Study">
+    <p>Choose a day and register to join.</p>
+    <ul>
+        <li>Tuesday: 8:00pm to 9:00pm</li>
+        <li>Wednesday: 8:00pm to 9:00pm</li>
+        <li>Thursday: 8:00pm to 9:00pm</li>
+        <li>Friday: 8:00pm to 9:00pm</li>
+    </ul>
+</section>
+<section class="biblestudy-register text-light"> 
+    <!-- Register form -->
+    <form (ngSubmit)="addMember(newMember)" #registerForm="ngForm">
+        <label for="memberFirstName" class="form-label">First Name: </label>
+        <input type="text" class="form-control" required [(ngModel)]="newMember.memberFirstName" name="memberFirstName" id="memberFirstName" #firstName="ngModel">
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) && !registerForm.submitted" class="alert alert-danger">
+            Please enter a first name.
+        </div>
+        <br/>
+        <label for="memberLastName" class="form-label">Last Name: </label>
+        <input type="text" class="form-control" required [(ngModel)]="newMember.memberLastName" name="memberLastName" id="memberLastName" #lastName="ngModel">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) && !registerForm.submitted" class="alert alert-danger">
+            Please enter a last name.
+        </div>
+        <br/>
+        <label for="memberEmail" class="form-label">Email: </label>
+        <input type="email" class="form-control" required email [(ngModel)]="newMember.memberEmail" name="memberEmail" id="memberEmail" #email="ngModel">
+        <div *ngIf="email.invalid && (email.dirty || email.touched) && !registerForm.submitted" class="alert alert-danger">
+            Please enter a valid email.
+        </div>
+        <br/>
+        <div class="group-days">
+            Pick a day:
+            <br/>
+            <input class="form-check-input" type="radio" name="groups" id="group1" value="tuesday" required [(ngModel)]="newMember.groups" #groups="ngModel">
+            <label class="form-check-label" for="group1">Tue</label>
+            <input class="form-check-input" type="radio" name="groups" id="group2" value="wednesday" required [(ngModel)]="newMember.groups" #groups="ngModel">
+            <label class="form-check-label" for="group2">Wed</label>
+            <input class="form-check-input" type="radio" name="groups" id="group3" value="thursday" required [(ngModel)]="newMember.groups" #groups="ngModel">
+            <label class="form-check-label" for="group3">Thu</label>
+            <input class="form-check-input" type="radio" name="groups" id="group4" value="friday" required [(ngModel)]="newMember.groups" #groups="ngModel">
+            <label class="form-check-label" for="group4">Fri</label>
+            <div *ngIf="groups.invalid && (groups.dirty || groups.touched) && !registerForm.submitted" class="alert alert-danger">
+                Please select a group.
+            </div>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+        <button type="reset" class="btn btn-secondary">Clear</button>
+    </form>
+    <!-- Confirmation message -->
+    <div *ngIf="showConfirmation" class="confirmation-message text-primary">
+        Registered successfully.
+    </div> 
+    <div *ngIf="message != ''" class="confirmation-message text-danger">
+        {{message}}
+    </div> 
+</section>

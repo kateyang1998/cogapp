@@ -1,0 +1,19 @@
+h2{
+    margin: 20px 0;
+}
+
+.video{
+    margin: 20px 0;
+}
+
+video{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    box-shadow: 0 0 5px;
+    border-radius: 10px;
+}
+
+p{
+    padding: 10px;
+}
